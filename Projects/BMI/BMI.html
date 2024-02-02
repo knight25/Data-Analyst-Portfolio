@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        article {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .code-cell {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .code-header {
+            background-color: #f5f5f5;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .code-content {
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 6px 8px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BMI CALCULATOR</h1>
+    </header>
+
+    <main>
+        <article>
+            <h1>Body Mass Index Calculator</h1>
+            <img src="./BMI.png" alt="Image Description">
+            <h2>WHAT IS BMI</h2>
+            <p>
+                BMI, or Body Mass Index, is a straightforward formula that provides an indication of whether a person has a healthy weight for their height.
+                 It's calculated by dividing an individual's weight in kilograms by the square of their height in meters.
+                 The resulting number categorizes individuals into different BMI ranges, including underweight, normal weight, overweight, and obesity.
+            </p>
+            <img src="./BMI_Table.png" alt="Image Description">
+            <h2>USING THE BMI CALCULATOR</h2>
+            <p>
+                Using a BMI calculator is simple and widely accessible. With just your weight and height, you can quickly determine your BMI score.
+                 Many online calculators make this process even more straightforward, requiring just a few clicks to input the necessary information.
+            </p>
+            <h1>CODE :</h1>
+            <script src="https://gist.github.com/knight25/9e9f49460cc028e4b1bef3c0ea15f398.js"></script>
+        </article>
+        
+
+        <!-- Add more articles as needed -->
+
+    </main>
+
+    <footer>
+        &copy; Opeyemi Tolulope
+    </footer>
+
+    <script>
+        function copyCode() {
+            // Get the code element
+            const codeElement = document.querySelector('.code-content code');
+
+            // Create a range and select the text
+            const range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+
+            // Execute the copy command
+            document.execCommand('copy');
+
+            // Deselect the text
+            window.getSelection().removeAllRanges();
+
+            // Optionally, provide visual feedback (e.g., change button text)
+            const copyButton = document.querySelector('.copy-button');
+            copyButton.textContent = 'Code Copied!';
+            setTimeout(() => {
+                copyButton.textContent = 'Copy Code';
+            }, 2000); // Reset after 2 seconds
+        }
+    </script>
+    
+
+</body>
+</html>
